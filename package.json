@@ -1,0 +1,23 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "service.js",
+  "scripts": {
+    "start": "node service.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elijah-Ricko/project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elijah-Ricko/project2/issues"
+  },
+  "homepage": "https://github.com/Elijah-Ricko/project2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
