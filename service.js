@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const mysql = require('mysql');
 
 const credentials = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
@@ -286,21 +287,18 @@ service.delete('/expenses/:id', (request, response) => {
 
 
 service.get("/report.html", (request, response) => {
-  // var options = {
-  //   root: path.join(__dirname)
-  // };
+  var options = {
+    root: path.join(__dirname)
+  };
 
   var fileName = 'report.html';
-  response.sendFile(fileName);
-
-  // var fileName = 'report.html';
-  // response.sendFile(fileName, options, function (err) {
-  //   if (err) {
-  //     next(err);
-  //   } else {
-  //     console.log('Sent:', fileName);
-  //   }
-  // });
+  response.sendFile(fileName, options, function (err) {
+    if (err) {
+      next(err);
+    } else {
+      console.log('Sent:', fileName);
+    }
+  });
 });
 
 
