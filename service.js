@@ -285,6 +285,22 @@ service.delete('/expenses/:id', (request, response) => {
 });
 
 
+service.get("/report.html", (request, response) => {
+  var options = {
+    root: path.join(__dirname)
+  };
+
+  var fileName = 'report.html';
+  response.sendFile(fileName, options, function (err) {
+    if (err) {
+      next(err);
+    } else {
+      console.log('Sent:', fileName);
+    }
+  });
+});
+
+
 const port = 5001;
 service.listen(port, () => {
   console.log(`We're live in port ${port}!`);

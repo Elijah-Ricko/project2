@@ -7,16 +7,41 @@
   <title>Report</title>
 </head>
 <body>
-  hello
+  
+  Available GET Requests:
+  <ul>
+    <li>https://project2.rickoes.me:8443/all</li>
+    <li>https://project2.rickoes.me:8443/net</li>
+    <li>https://project2.rickoes.me:8443/id/:id</li>
+    <li>https://project2.rickoes.me:8443/year/:year</li>
+    <li>https://project2.rickoes.me:8443/month/:month/:year</li>
+    <li>https://project2.rickoes.me:8443/day/:month/:day/:year</li>
+  </ul>
 
-  <li>
-    <ul>https://project2.rickoes.me:8443/all</ul>
-    <ul>https://project2.rickoes.me:8443/net</ul>
-    <ul>https://project2.rickoes.me:8443/id/:id</ul>
-    <ul>https://project2.rickoes.me:8443/year/:year</ul>
-    <ul>https://project2.rickoes.me:8443/month/:month/:year</ul>
-    <ul>https://project2.rickoes.me:8443/day/:month/:day/:year</ul>
-  </li>
+  <ol>
+    <li>My Service is a basic expense report service. You can insert expenses (amount, date, description) and lookup previous expenses by date or id.</li>
+    <li>I use a MySQL Database.</li>
+    <li>I use Express</li>
+    <li>It is available at https://project2.rickoes:8443/</li>
+    <li>My endpoints to my knowledge are appropriately named.</li>
+    <li>My service can send and receive complex data as JSON</li>
+    <li>
+      <ul>
+        <li>C: You are able to insert new expenses into the database providing an amount, month, day, year, and description</li>
+        <li>R: Above, I provided the examples of all GET Requests I have available.</li>
+        <li>U: You can update a previous expense by providing JSON data of all necessary fields and the id to the specific entry in the URL.</li>
+        <li>D: You can delete by providing the id in the URL.</li>
+      </ul>
+    </li>
+    <li>I use UFW as specified in the textbook.</li>
+    <li>I use NGINX as specified in the textbook.</li>
+    <li>I use the options wildcard and custom middleware.</li>
+    <li>I use PM2 as specified in the textbook.</li>
+    <li>I have shared the GitHub repository.</li>
+    <li>My SQL files used to create the database and create the table are both provided in create_expenses.sql and schema.sql</li>
+    <li>My steady flow of commits isn't exactly provided because of an issue I had with attempting to remove my password from previous commits. Causing me to create a new repository.</li>
+    <li>If you're here, hopefully that means the report was findable.</li>
+  </ol>
   
 </body>
 </html>
