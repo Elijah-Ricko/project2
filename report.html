@@ -18,6 +18,22 @@
     <li>https://project2.rickoes.me:8443/day/:month/:day/:year</li>
   </ul>
 
+  Available Post Request:
+  <ul>
+    <li>curl --header 'Content-Type: application/json' --data '{"amount": DECIMAL(13,2), "year": INT, "month": INT, "day": INT, "description": TEXT}' https://project2.rickoes.me:8443/expenses</li>
+  </ul>
+
+  Available PATCH Request:
+  <ul>
+    <li>curl --header 'Content-Type: application/json' --request PATCH --data '{"amount": DECIMAL(13,2), "year": INT, "month": INT, "day": INT, "description": TEXT}' https://project2.rickoes.me:8443/expenses/:id</li>
+  </ul>
+
+  Available DELETE Request:
+  <ul>
+    <li>curl --request DELETE https://project2.rickoes.me:8443/expenses/:id</li>
+    </ul></li>
+  </ul>
+
   <ol>
     <li>My Service is a basic expense report service. You can insert expenses (amount, date, description) and lookup previous expenses by date or id.</li>
     <li>I use a MySQL Database.</li>
