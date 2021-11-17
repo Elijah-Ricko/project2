@@ -157,11 +157,11 @@ service.get('/id/:id', (request, response) => {
 });
 
 // Query for expenses from a certain year
-service.get('/year/:year', (request, response) => {
-  const params = [
-    parseInt(request.params.year),
-  ];
+service.get('/expenses/:year', (request, response) => {
 
+  const params = [
+    request.params.year
+  ];
   const query = 'SELECT * FROM expenses WHERE year = ? ORDER BY year DESC';
 
   select(query, params, response);
@@ -169,12 +169,12 @@ service.get('/year/:year', (request, response) => {
 });
 
 // Query for expenses from a certain month
-service.get('/month/:month/:year', (request, response) => {
-  const params = [
-    parseInt(request.params.month),
-    parseInt(request.params.year),
-  ];
+service.get('/expenses/:year/:month', (request, response) => {
 
+  const params = [
+    request.params.year,
+    request.params.month
+  ];
   const query = 'SELECT * FROM expenses WHERE month = ? AND year = ? ORDER BY year DESC';
 
   select(query, params, response);
@@ -182,17 +182,17 @@ service.get('/month/:month/:year', (request, response) => {
 });
 
 // Query for expenses from a certain day
-service.get('/day/:month/:day/:year', (request, response) => {
-  const params = [
-    parseInt(request.params.month),
-    parseInt(request.params.day),
-    parseInt(request.params.year),
-  ];
+service.get('/expenses/:year/:month/:day', (request, response) => {
 
-  const query = 'SELECT * FROM expenses WHERE month = ? AND day = ? AND year = ? ORDER BY year DESC';
+  const params = [
+    request.params.year,
+    request.params.month,
+    request.params.day
+  ];
+  const query = 'SELECT * FROM expenses WHERE day = ? AND month = ? AND year = ? ORDER BY year DESC';
 
   select(query, params, response);
-  
+
 });
 
 
@@ -203,10 +203,10 @@ service.get('/day/:month/:day/:year', (request, response) => {
 service.post('/expenses', (request, response) => {
 
   if (request.body.hasOwnProperty('amount') &&
-      request.body.hasOwnProperty('year') &&
-      request.body.hasOwnProperty('month') &&
-      request.body.hasOwnProperty('day') &&
-      request.body.hasOwnProperty('description')) {
+    request.body.hasOwnProperty('year') &&
+    request.body.hasOwnProperty('month') &&
+    request.body.hasOwnProperty('day') &&
+    request.body.hasOwnProperty('description')) {
 
     const params = [
       parseFloat(request.body.amount).toFixed(2),
