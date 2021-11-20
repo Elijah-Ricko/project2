@@ -114,7 +114,7 @@ function insert(query, params, response) {
 // Query for all expenses
 service.get('/all', (request, response) => {
 
-  const query = 'SELECT * FROM expenses ORDER BY year DESC';
+  const query = 'SELECT * FROM expenses ORDER BY day DESC, month DESC, year DESC';
   selectAll(query, response);
 
 });
@@ -164,7 +164,7 @@ service.get('/expenses/:year', (request, response) => {
   const params = [
     request.params.year
   ];
-  const query = 'SELECT * FROM expenses WHERE year = ? ORDER BY year DESC';
+  const query = 'SELECT * FROM expenses WHERE year = ? ORDER BY day DESC, month DESC, year DESC';
 
   select(query, params, response);
 
@@ -177,7 +177,7 @@ service.get('/expenses/:year/:month', (request, response) => {
     request.params.year,
     request.params.month
   ];
-  const query = 'SELECT * FROM expenses WHERE year = ? AND month = ? ORDER BY year DESC';
+  const query = 'SELECT * FROM expenses WHERE year = ? AND month = ? ORDER BY day DESC, month DESC, year DESC';
 
   select(query, params, response);
 
@@ -191,7 +191,7 @@ service.get('/expenses/:year/:month/:day', (request, response) => {
     request.params.month,
     request.params.day
   ];
-  const query = 'SELECT * FROM expenses WHERE year = ? AND month = ? AND day = ? ORDER BY year DESC';
+  const query = 'SELECT * FROM expenses WHERE year = ? AND month = ? AND day = ? ORDER BY day DESC, month DESC, year DESC';
 
   select(query, params, response);
 
