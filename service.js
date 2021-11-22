@@ -145,6 +145,18 @@ service.get("/net", (request, response) => {
 
 });
 
+// Query for expense by Keyword
+service.get('/keyword/:key', (request, response) => {
+  const params = [
+    parseInt(request.params.key),
+  ];
+
+  const query = "SELECT * FROM expenses WHERE description LIKE '%?%'";
+
+  select(query, params, response);
+
+});
+
 
 // Query for expense by ID
 service.get('/id/:id', (request, response) => {
