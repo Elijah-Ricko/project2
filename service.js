@@ -148,7 +148,7 @@ service.get("/net", (request, response) => {
 // Query for expense by Keyword
 service.get('/keyword/:key', (request, response) => {
   const params = [
-    parseInt(request.params.key),
+    request.params.key,
   ];
 
   const query = 'SELECT * FROM expenses WHERE description LIKE %?%';
