@@ -151,6 +151,8 @@ service.get('/keyword/:key', (request, response) => {
     request.params.key,
   ];
 
+  console.log(params);
+
   const query = "SELECT * FROM expenses WHERE description LIKE '%?%'";
 
   select(query, params, response);
