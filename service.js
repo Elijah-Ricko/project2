@@ -153,7 +153,7 @@ service.get('/keyword/:key', (request, response) => {
 
   console.log(params);
 
-  const query = "SELECT * FROM expenses WHERE description LIKE '%?%'";
+  const query = "SELECT * FROM expenses WHERE description LIKE CONCAT('%', ?, '%')";
 
   select(query, params, response);
 
