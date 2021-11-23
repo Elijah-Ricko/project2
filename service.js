@@ -99,7 +99,7 @@ function insert(query, params, response) {
     } else {
       response.json({
         ok: true,
-        results: result.insertId,
+        results: result,
       });
     }
   });
