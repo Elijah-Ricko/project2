@@ -259,10 +259,11 @@ service.patch('/expenses/:id', (request, response) => {
     parseInt(request.body.month),
     parseInt(request.body.day),
     request.body.description,
+    request.body.updated_at,
     parseInt(request.params.id),
   ];
 
-  const query = 'UPDATE expenses SET amount = ?, year = ?, month = ?, day = ?, description = ? WHERE id = ?';
+  const query = 'UPDATE expenses SET amount = ?, year = ?, month = ?, day = ?, description = ?, updated_at = ? WHERE id = ?';
   connection.query(query, params, (error, result) => {
     if (error) {
       response.status(404);
