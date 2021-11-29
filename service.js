@@ -38,8 +38,8 @@ function rowFormat(row) {
     month: row.month,
     day: row.day,
     description: row.description,
-    created: row.created_at,
-    updated: row.updated_at,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
   };
 }
 
